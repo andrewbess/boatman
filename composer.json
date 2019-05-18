@@ -1,0 +1,19 @@
+{
+    "name": "dreamteam/boatman",
+    "description": "",
+    "type": "project",
+    "version": "1.0.0",
+    "autoload": {
+        "psr-4": {
+            "DreamTeam\\Boatman\\": "vendor/dreamteam/boatman/"
+        },
+        "psr-0": {
+            "": [
+                "app/code/"
+            ]
+        }
+    },
+    "require": {
+        "symfony/event-dispatcher": "^4.2"
+    }
+}
