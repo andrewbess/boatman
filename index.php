@@ -3,11 +3,12 @@ ini_set('display_errors', 1);
 error_reporting(E_ALL);
 
 require_once __DIR__ . '/vendor/autoload.php';
-//const BP = __DIR__;
+const BP = __DIR__;
 
 use DreamTeam\Boatman\LeftSeaside;
 use DreamTeam\Boatman\Adult;
 use DreamTeam\Boatman\Child;
+use DreamTeam\Boatman\System\EventManager;
 
 LeftSeaside::setPassenger(new Adult('Dima'));
 LeftSeaside::setPassenger(new Adult('Olia'));
@@ -15,8 +16,7 @@ LeftSeaside::setPassenger(new Child('Ivan'));
 LeftSeaside::setPassenger(new Child('Kolia'));
 LeftSeaside::setPassenger(new Child('Andrii'));
 
-
-
+$eventManager = new EventManager();
 
 echo '<pre>';
 var_dump(LeftSeaside::getPassengers());
