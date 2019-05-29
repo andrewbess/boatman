@@ -2,3 +2,5 @@ var/
 !var/.htaccess
 vendor/
 !vendor/.htaccess
+nbproject/
+.idea/
