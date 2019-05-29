@@ -7,7 +7,5 @@ const BP = __DIR__;
 
 use DreamTeam\Boatman\System\Application;
 
-Application::init();
+Application::init($_GET);
 Application::run();
-
-$temp = 0;

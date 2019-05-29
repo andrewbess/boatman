@@ -33,4 +33,37 @@ class LeftSeaside extends SeasideAbstract
     {
         return (bool) count(self::$passengers);
     }
+
+    public static function isOnlyChild()
+    {
+        if (!count(static::getPassengers())) {
+            return false;
+        }
+
+        /** @var HumanAbstract $passenger */
+        foreach (static::$passengers as $passenger) {
+            if ($passenger->getSeat() == 1) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    public static function isEmpty()
+    {
+        return !count(static::getPassengers());
+    }
+
+    public static function getPassengersWeight()
+    {
+        $weight = 0;
+
+        /** @var HumanAbstract $passenger */
+        foreach (static::$passengers as $passenger) {
+            $weight += $passenger->getSeat();
+        }
+
+        return $weight;
+    }
 }

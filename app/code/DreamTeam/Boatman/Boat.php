@@ -27,4 +27,36 @@ class Boat
     {
         return (bool) count($this->seats);
     }
+
+    public function isOverloading()
+    {
+        return $this->passengersWeight() > static::MAX_SEATS;
+    }
+
+    protected function passengersWeight()
+    {
+        $weight = 0;
+
+        /** @var HumanAbstract $passenger */
+        foreach ($this->seats as $passenger) {
+            $weight += $passenger->getSeat();
+        }
+
+        return $weight;
+    }
+
+    public function isFullLoading()
+    {
+        return $this->passengersWeight() == static::MAX_SEATS;
+    }
+
+    public function moveLast()
+    {
+        array_pop($this->seats);
+    }
+
+    public function getFreeSeat()
+    {
+        return static::MAX_SEATS - $this->passengersWeight();
+    }
 }

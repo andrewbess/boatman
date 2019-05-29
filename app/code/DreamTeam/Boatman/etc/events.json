@@ -1,9 +1,8 @@
 {
     "passenger_boarding_after": {
-        "dreamteam_boatman_first_observer": "DreamTeam\\Boatman\\Observer\\First",
-        "dreamteam_boatman_second_observer": "DreamTeam\\Boatman\\Observer\\Second"
+        "passenger_boarding_after_observer": "DreamTeam\\Boatman\\Observer\\AfterBoarding"
     },
     "passenger_boarding_before": {
-
+        "passenger_boarding_before_observer": "DreamTeam\\Boatman\\Observer\\BeforeBoarding"
     }
 }
